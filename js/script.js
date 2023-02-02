@@ -16,6 +16,7 @@ function addSectionActive(param) {
 }
 function setActiveColor(color) {
     $(':root').style.setProperty('--skin-color', color);
+    setColorIconLang(color)
 }
 function toggleSettingThemeEvent() {
     const toggle = $('.style-switcher');
@@ -128,7 +129,7 @@ tsParticles.load('particles-js', {
         },
         links: {
             color: '#504e70',
-            distance: 100,
+            distance: 70,
             enable: true,
             opacity: 0.5,
             width: 1,
@@ -151,7 +152,7 @@ tsParticles.load('particles-js', {
                 enable: true,
                 area: 800,
             },
-            value: 80,
+            value: 50,
         },
         opacity: {
             value: 0.5,
@@ -165,3 +166,46 @@ tsParticles.load('particles-js', {
     },
     detectRetina: true,
 });
+
+function mailto() {
+    const name = $("input[name='name']").value;
+    const email = $("input[name='email']").value;
+    const subject = $("input[name='subject']").value;
+    const content = $("textarea[name='content']").value;
+    window.location.href = `mailto:thienv29@gmail.com?subject=${subject}&body=${content}`;
+}
+
+const stringDirecLogo = [
+    'nextjs',
+    'angular',
+    'nestjs',
+    'reactjs',
+    'nodejs',
+    'springboot',
+];
+let count = 0;
+setInterval(() => {
+    if (count == 6) {
+        count = 0;
+    }
+    const logo = $('.' + stringDirecLogo[count]);
+    const d = getComputedStyle($('body'));
+    const primaryColor = d.getPropertyValue('--skin-color');
+    setColorIconLang(primaryColor)
+    $('.icon-lang.active')?.classList.remove('active');
+    logo.classList.add('active');
+    count++;
+}, 2000);
+
+function setColorIconLang(primaryColor) {
+  $('.nextjs svg path').setAttribute('fill', primaryColor);
+  $('.nestjs svg path').setAttribute('fill', primaryColor);
+  $('.springboot svg path').setAttribute('fill', primaryColor);
+  $$('.nodejs svg path').forEach((element) => {
+      element.setAttribute('fill', primaryColor);
+  });
+  $('.reactjs svg circle').setAttribute('fill', primaryColor);
+  $('.reactjs svg g').setAttribute('stroke', primaryColor);
+  $('.angular svg style').innerHTML = `.st0 { fill: ${primaryColor};}.st2 {fill: #ffffff;}`;
+  
+}
