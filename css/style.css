@@ -762,4 +762,5 @@ color: var(--text-black-700);
     text-decoration: underline;
     margin-left: 20px;
     margin-bottom: 30px;
+    color: var(--text-black-900);
   }
