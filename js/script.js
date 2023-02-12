@@ -209,4 +209,4 @@ function setColorIconLang(primaryColor) {
 
 
 $('#link-domain').innerHTML=`${window.location.hostname}`
-$('#link-domain').setAttribute('href', `${window.location.hostname}`);
+$('#link-domain').setAttribute('href', `https://${window.location.hostname}`);
