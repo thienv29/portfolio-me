@@ -758,4 +758,8 @@ color: var(--text-black-700);
     margin-top: 10px;
   }
 
-  
+  #service .title-child{
+    text-decoration: underline;
+    margin-left: 20px;
+    margin-bottom: 30px;
+  }
