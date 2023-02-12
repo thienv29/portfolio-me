@@ -58,7 +58,12 @@ $$('.nav li').forEach((navE) => {
 });
 
 $('.about-hireme-btn').onclick = () => {
-    console.log('cc');
+    removeNavActive();
+    addNavActive('contact');
+    removeSectionActive();
+    addSectionActive('contact');
+}
+$('.about-hireme-btn2').onclick = () => {
     removeNavActive();
     addNavActive('contact');
     removeSectionActive();
@@ -86,10 +91,10 @@ window.addEventListener('load', () => {
 var typed = new Typed('.typing', {
     strings: [
         '',
-        'Web Designer',
+        'Business Analysis ',
         'Web Developer',
-        'Graphic Designer',
-        'YouTuber ',
+        'Web Developer',
+        'Freelancer',
     ],
     typeSpeed: 100,
     BackSpeed: 60,
