@@ -21,7 +21,6 @@ function setActiveColor(color) {
 function toggleSettingThemeEvent() {
     const toggle = $('.style-switcher');
     $('.style-switcher-toggle').onclick = (e) => {
-        console.log(toggle.classList.length);
         if (toggle.classList.length == 2) {
             toggle.classList.remove('open');
         } else {
@@ -32,7 +31,6 @@ function toggleSettingThemeEvent() {
 function toggleThemeEvent() {
     const toggle = $('body');
     $('.day-night').onclick = (e) => {
-        console.log(toggle.classList.length);
         if (toggle.classList.length == 1) {
             toggle.classList.remove('dark');
             $('.day-night').querySelector('i').classList.add('fa-sun');
@@ -40,7 +38,6 @@ function toggleThemeEvent() {
             toggle.classList.add('dark');
             $('.day-night').querySelector('i').classList.remove('fa-sun');
         }
-        setBackgroundAnimate();
     };
 }
 // function setBackgroundAnimate() {
