@@ -54,10 +54,16 @@ $$('.nav li').forEach((navE) => {
         removeSectionActive();
         addSectionActive(classSection);
 
-        // hiddenAllSection();
-        // $('.'+classSection).classList.remove('hidden');
     };
 });
+
+$('.about-hireme-btn').onclick = () => {
+    console.log('cc');
+    removeNavActive();
+    addNavActive('contact');
+    removeSectionActive();
+    addSectionActive('contact');
+}
 toggleSettingThemeEvent();
 toggleThemeEvent();
 window.addEventListener('scroll', () => {
@@ -210,3 +216,6 @@ function setColorIconLang(primaryColor) {
 
 $('#link-domain').innerHTML=`${window.location.hostname}`
 $('#link-domain').setAttribute('href', `https://${window.location.hostname}`);
+
+$('#link-domain2').innerHTML=`${window.location.hostname}`
+$('#link-domain2').setAttribute('href', `https://${window.location.hostname}`);
