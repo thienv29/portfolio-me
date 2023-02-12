@@ -206,3 +206,6 @@ function setColorIconLang(primaryColor) {
   $('.angular svg style').innerHTML = `.st0 { fill: ${primaryColor};}.st2 {fill: #ffffff;}`;
   
 }
+
+
+$('#link-domain').innerHTML=`${window.location.hostname}`
