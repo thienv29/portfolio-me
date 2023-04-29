@@ -531,14 +531,14 @@ section {
 .service .service-item .service-item-inner:hover {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
-.service .service-item .service-item-inner .icon .fas ,
-.service .service-item .service-item-inner .icon .fab ,
+.service .service-item .service-item-inner .icon .fas,
+.service .service-item .service-item-inner .icon .fab,
 .service .service-item .service-item-inner .icon .fa {
     font-size: 40px;
     color: var(--skin-color);
 }
-.service .service-item .service-item-inner:hover .icon .fas ,
-.service .service-item .service-item-inner:hover .icon .fab ,
+.service .service-item .service-item-inner:hover .icon .fas,
+.service .service-item .service-item-inner:hover .icon .fab,
 .service .service-item .service-item-inner:hover .icon .fa {
     font-size: 1.5rem;
     color: white;
@@ -699,6 +699,11 @@ section {
     }
     .home .home-img {
         display: none;
+    }
+    .section {
+        opacity: 1;
+        z-index: 2;
+        transform: translateX(0%);
     }
 }
 @media (max-width: 767px) {

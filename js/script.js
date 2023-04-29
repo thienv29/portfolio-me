@@ -224,3 +224,6 @@ $('#link-domain').setAttribute('href', `https://${window.location.hostname}`);
 
 $('#link-domain2').innerHTML=`${window.location.hostname}`
 $('#link-domain2').setAttribute('href', `https://${window.location.hostname}`);
+
+$('#age-author').innerHTML=`${new Date().getFullYear() - 2001}`
+
