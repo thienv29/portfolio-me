@@ -27,6 +27,35 @@ function getDta() {
         .catch((error) => {
             console.error('Error fetching data:', error);
         });
+    fetch(
+        `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/Sheet2?key=${API_KEY}`
+    )
+        .then((response) => response.json())
+        .then((data) => {
+            // Parse the response and extract the data you want
+            const matrixData = data.values;
+            const headerRow = matrixData.shift();
+            const pragraghs = matrixData.map((projectValue) => {
+                let tmp = {};
+                headerRow.forEach((element, index) => {
+                    tmp[element] = projectValue[index];
+                });
+                return tmp;
+            });
+            console.log(pragraghs);
+            renderParagragh(pragraghs[0])
+        })
+        .catch((error) => {
+            console.error('Error fetching data:', error);
+        });
+}
+
+function renderParagragh(pragragh) {
+    const isVN = document.querySelector('.lang span').innerHTML == 'VN';
+    $('#p1').innerHTML = isVN ? pragragh.p1vn : pragragh.p1
+    $('#p2').innerHTML = isVN ? pragragh.p2vn : pragragh.p2
+    $('#p3').innerHTML = isVN ? pragragh.p3vn : pragragh.p3
+    $('#p4').innerHTML = isVN ? pragragh.p4vn : pragragh.p4
 }
 
 function renderProject(projects) {
@@ -43,7 +72,7 @@ function renderProject(projects) {
         }/image1.png" alt="Snowy Mountains">
                                     <div class="card__content">
                                       <h1 class="card__header">${
-                                          project.name 
+                                          project.name
                                       }</h1>
                                       <p>${checkHaveLink(project)}</p>
                                       <textarea class="card__text" rows="3">${
@@ -111,7 +140,6 @@ function renderProject(projects) {
     };
 }
 
-
 function wraplinkGit(input) {
     if (!input.includes('http')) {
         return input;
@@ -126,18 +154,18 @@ function wraplinkGit(input) {
 }
 
 function checkHaveLink(project) {
-    const isHaveLinkGit = project.linkGit.includes('http')
-    const isHaveLinkDemo = project.linkDemo.includes('http')
+    const isHaveLinkGit = project.linkGit.includes('http');
+    const isHaveLinkDemo = project.linkDemo.includes('http');
     if (isHaveLinkGit && isHaveLinkDemo) {
-        return '[Demo + Source]'
+        return '[Demo + Source]';
     }
     if (isHaveLinkGit) {
-        return '[Source]'
+        return '[Source]';
     }
     if (isHaveLinkDemo) {
-        return '[Demo]'
+        return '[Demo]';
     }
-    return '[Private]'
+    return '[Private]';
 }
 
 getDta();
