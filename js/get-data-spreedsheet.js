@@ -43,8 +43,9 @@ function renderProject(projects) {
         }/image1.png" alt="Snowy Mountains">
                                     <div class="card__content">
                                       <h1 class="card__header">${
-                                          project.name
+                                          project.name 
                                       }</h1>
+                                      <p>${checkHaveLink(project)}</p>
                                       <textarea class="card__text" rows="3">${
                                           isVN
                                               ? project.description
@@ -122,6 +123,21 @@ function wraplinkGit(input) {
         input.split('//')[1]
     }</a> <br>`;
     return output;
+}
+
+function checkHaveLink(project) {
+    const isHaveLinkGit = project.linkGit.includes('http')
+    const isHaveLinkDemo = project.linkDemo.includes('http')
+    if (isHaveLinkGit && isHaveLinkDemo) {
+        return '[Demo + Source]'
+    }
+    if (isHaveLinkGit) {
+        return '[Source]'
+    }
+    if (isHaveLinkDemo) {
+        return '[Demo]'
+    }
+    return '[Private]'
 }
 
 getDta();
