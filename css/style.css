@@ -19,7 +19,7 @@ html {
 body {
     line-height: 1.5;
     font-size: 16px;
-    font-family: 'Poppins' !important;
+    font-family: 'Roboto Slab', serif;
     background-color: var(--bg-black-900);
 }
 * {
@@ -657,6 +657,11 @@ section {
 .main-content {
     margin-left: 270px;
 }
+.img-modal{
+    width: 700px;
+    border: 1px solid var(--text-black-700);
+    border-radius: 3px;
+}
 @media (max-width: 1199px) {
     .aside {
         left: -270px;
@@ -685,6 +690,7 @@ section {
     .aside-show {
         left: 0px !important;
     }
+    
 }
 @media (max-width: 991px) {
     .contact .contact-info-item,
@@ -705,6 +711,9 @@ section {
         z-index: 2;
         transform: translateX(0%);
     }
+    .img-modal{
+        width: 500px;
+    }
 }
 @media (max-width: 767px) {
     .contact .contact-form .col-6,
@@ -717,6 +726,9 @@ section {
     .about .about-content .personal-info {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+    .img-modal{
+        display: none;
     }
 }
 ::-webkit-scrollbar {
@@ -772,3 +784,9 @@ section {
     margin-bottom: 30px;
     color: var(--text-black-900);
 }
+.zIndex-1{
+    z-index: -1;
+}
+
+
+/* product */

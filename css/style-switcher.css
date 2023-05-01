@@ -39,6 +39,9 @@
 .style-switcher .day-night{
     top: 55px;
 }
+.style-switcher .lang{
+    top: 111px;
+}
  
 .style-switcher h4{
     margin: 0 0 10px;

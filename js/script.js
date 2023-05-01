@@ -39,6 +39,10 @@ function toggleThemeEvent() {
             $('.day-night').querySelector('i').classList.remove('fa-sun');
         }
     };
+    $('.lang').onclick = (e) => {
+        $('.lang span').innerHTML = $('.lang span').innerHTML == 'VN' ? 'ES' : 'VN'
+    };
+    
 }
 // function setBackgroundAnimate() {
 //     const d = getComputedStyle($('body'));
