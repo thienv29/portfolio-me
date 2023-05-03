@@ -5,6 +5,10 @@ const API_KEY = 'AIzaSyBqkFRu5Vvp6HW3E5xxW5kmmRBQMmKQtZU';
 
 function getDta() {
     console.log('getDtata');
+    const isVN = document.querySelector('.lang span').innerHTML == 'VN';
+    $$('. btn-download-cv').forEach(e =>{
+        e.setAttribute('href',`/file/thiencv_${isVN ? 'vn' : 'es'}.pdf`)
+    })
     // Make an HTTP GET request to the Google Sheets API
     fetch(
         `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${SHEET_NAME}?key=${API_KEY}`
