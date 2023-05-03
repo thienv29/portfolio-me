@@ -6,7 +6,7 @@ const API_KEY = 'AIzaSyBqkFRu5Vvp6HW3E5xxW5kmmRBQMmKQtZU';
 function getDta() {
     console.log('getDtata');
     const isVN = document.querySelector('.lang span').innerHTML == 'VN';
-    $$('. btn-download-cv').forEach(e =>{
+    $$('.btn-download-cv').forEach(e =>{
         e.setAttribute('href',`/file/thiencv_${isVN ? 'vn' : 'es'}.pdf`)
     })
     // Make an HTTP GET request to the Google Sheets API
