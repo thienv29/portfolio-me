@@ -41,15 +41,14 @@ function toggleThemeEvent() {
     };
     $('.lang').onclick = (e) => {
         $('.lang span').innerHTML = $('.lang span').innerHTML == 'VN' ? 'ES' : 'VN'
+        const isVN = document.querySelector('.lang span').innerHTML == 'VN';
+        $$('.btn-download-cv').forEach(e =>{
+            e.setAttribute('href',`/file/thiencv_${isVN ? 'vn' : 'es'}.pdf`)
+            e.innerHTML = `Download CV (${isVN ? 'vn' : 'es'})`
+        })
     };
     
 }
-// function setBackgroundAnimate() {
-//     const d = getComputedStyle($('body'));
-//     const primaryColor = d.getPropertyValue('--text-black-900');
-//     const secondColor = d.getPropertyValue('--text-black-700');
-//     console.log(primaryColor, secondColor);
-// }
 $$('.nav li').forEach((navE) => {
     navE.onclick = (e) => {
         const classSection = e.target.getAttribute('data-link');
