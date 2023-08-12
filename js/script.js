@@ -42,7 +42,7 @@ function toggleThemeEvent() {
     $('.lang').onclick = (e) => {
         $('.lang span').innerHTML = $('.lang span').innerHTML == 'VN' ? 'ES' : 'VN'
         const isVN = document.querySelector('.lang span').innerHTML == 'VN';
-        $$('.btn-download-cv').forEach(e =>{
+        $$('.btn-download-cv1').forEach(e =>{
             e.setAttribute('href',`/file/thiencv_${isVN ? 'vn' : 'es'}.pdf`)
             e.innerHTML = `Download CV (${isVN ? 'vn' : 'es'})`
         })
