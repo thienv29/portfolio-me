@@ -1,7 +1,7 @@
 // Replace SPREADSHEET_ID and SHEET_NAME with the ID of your spreadsheet and the name of the sheet you want to retrieve
 const SPREADSHEET_ID = '1chxWsrqLQ_2uBWE1Rg9HL9B6TTRaf5GEouzQPaygdz8';
 const SHEET_NAME = 'Sheet1';
-const API_KEY = 'AIzaSyBqkFRu5Vvp6HW3E5xxW5kmmRBQMmKQtZU';
+const API_KEY = 'AIzaSyCyrA2dOZ7gC0l81ovrsSABTcfTz2D5FL0';
 
 function getDta() {
     console.log('getDtata');
